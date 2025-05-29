@@ -6,19 +6,21 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc -b && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "vite build && gh-pages -d dist"
   },
   "dependencies": {
-    "vue": "^3.5.10",
-    "@heroicons/vue": "^2.1.1"
+    "@heroicons/vue": "^2.1.1",
+    "vue": "^3.5.10"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.1.4",
+    "autoprefixer": "^10.4.17",
+    "gh-pages": "^6.3.0",
+    "postcss": "^8.4.35",
+    "tailwindcss": "^3.4.1",
     "typescript": "^5.5.3",
     "vite": "^5.4.8",
-    "vue-tsc": "^2.1.6",
-    "autoprefixer": "^10.4.17",
-    "tailwindcss": "^3.4.1",
-    "postcss": "^8.4.35"
+    "vue-tsc": "^2.1.6"
   }
 }
