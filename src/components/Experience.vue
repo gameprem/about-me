@@ -1,42 +1,68 @@
+<script setup lang="ts">
+interface ExperienceItem {
+  position: string;
+  company: string;
+  location: string;
+  period: string;
+  details: string[];
+}
+
+const experiences: ExperienceItem[] = [
+  {
+    position: 'Full-Stack Developer',
+    company: 'Pobpa Co., Ltd.',
+    location: 'Bangkok',
+    period: 'January 2024 – Present',
+    details: [
+      'Designed and implemented database schemas to support scalable business logic',
+      'Developed RESTful APIs using ExpressJS and NestJS',
+      'Built responsive web applications with Vue.js',
+      'Developed cross-platform mobile apps using Flutter, integrating real-time features',
+    ],
+  },
+  {
+    position: 'Full-Stack Developer',
+    company: 'START APPLICATION Co., Ltd.',
+    location: 'Udon Thani',
+    period: 'January 2021 – December 2023',
+    details: [
+      'Designed and implemented database schemas to support scalable business logic',
+      'Developed RESTful APIs using ExpressJS and NestJS',
+      'Built responsive web applications with Vue.js',
+      'Developed cross-platform mobile apps using Flutter, integrating real-time features',
+    ],
+  },
+  {
+    position: 'Full-Stack Developer',
+    company: 'Quinl (Thailand) Co., Ltd.',
+    location: 'Udon Thani',
+    period: 'January 2020 – December 2020',
+    details: [
+      'Architected and maintained database structures for high-availability systems',
+      'Created RESTful services with ExpressJS/NestJS to power web and mobile clients',
+      'Developed web interfaces using Vue.js and optimized performance',
+      'Delivered mobile solutions with Flutter, leveraging Redis for caching',
+    ],
+  },
+]
+</script>
+
 <template>
   <section class="mb-6">
     <h2 class="section-title">Professional Experience</h2>
-    
-    <div class="mb-4">
+    <div v-for="(exp, idx) in experiences" :key="exp.company + exp.period" class="mb-4">
       <div class="flex justify-between items-start mb-2">
         <div>
-          <h3 class="text-lg font-bold text-gray-800">Full-Stack Developer</h3>
-          <div class="text-[var(--theme-color)] font-medium text-sm">START APPLICATION Co., Ltd.</div>
+          <h3 class="text-lg font-bold text-gray-800">{{ exp.position }}</h3>
+          <div class="text-[var(--theme-color)] font-medium text-sm">{{ exp.company }}</div>
         </div>
         <div class="text-gray-600 text-right text-sm">
-          <div>Udon Thani</div>
-          <div class="italic">January 2021 – Present</div>
+          <div>{{ exp.location }}</div>
+          <div class="italic">{{ exp.period }}</div>
         </div>
       </div>
       <ul class="list-disc list-inside text-gray-700 text-sm space-y-1">
-        <li>Designed and implemented database schemas to support scalable business logic</li>
-        <li>Developed RESTful APIs using ExpressJS and NestJS</li>
-        <li>Built responsive web applications with Vue.js</li>
-        <li>Developed cross-platform mobile apps using Flutter, integrating real-time features</li>
-      </ul>
-    </div>
-
-    <div class="mb-4">
-      <div class="flex justify-between items-start mb-2">
-        <div>
-          <h3 class="text-lg font-bold text-gray-800">Full-Stack Developer</h3>
-          <div class="text-[var(--theme-color)] font-medium text-sm">Quinl (Thailand) Co., Ltd.</div>
-        </div>
-        <div class="text-gray-600 text-right text-sm">
-          <div>Udon Thani</div>
-          <div class="italic">January 2020 – December 2020</div>
-        </div>
-      </div>
-      <ul class="list-disc list-inside text-gray-700 text-sm space-y-1">
-        <li>Architected and maintained database structures for high-availability systems</li>
-        <li>Created RESTful services with ExpressJS/NestJS to power web and mobile clients</li>
-        <li>Developed web interfaces using Vue.js and optimized performance</li>
-        <li>Delivered mobile solutions with Flutter, leveraging Redis for caching</li>
+        <li v-for="(detail, i) in exp.details" :key="i">{{ detail }}</li>
       </ul>
     </div>
   </section>
