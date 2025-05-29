@@ -1,3 +1,30 @@
+<template>
+  <section class="mb-6">
+    <h2 class="section-title">Professional Experience</h2>
+    <div
+      v-for="(exp, idx) in experiences"
+      :key="exp.company + exp.period"
+      class="mb-4"
+    >
+      <div class="flex justify-between items-start mb-2">
+        <div>
+          <h3 class="text-lg font-bold text-gray-800">{{ exp.position }}</h3>
+          <div class="text-[var(--theme-color)] font-medium text-sm">
+            {{ exp.company }}
+          </div>
+        </div>
+        <div class="text-gray-600 text-right text-sm">
+          <div>{{ exp.location }}</div>
+          <div class="italic">{{ exp.period }}</div>
+        </div>
+      </div>
+      <ul class="list-disc list-inside text-gray-700 text-sm space-y-1">
+        <li v-for="(detail, i) in exp.details" :key="i">{{ detail }}</li>
+      </ul>
+    </div>
+  </section>
+</template>
+
 <script setup lang="ts">
 interface ExperienceItem {
   position: string;
@@ -47,30 +74,3 @@ const experiences: ExperienceItem[] = [
   },
 ];
 </script>
-
-<template>
-  <section class="mb-6">
-    <h2 class="section-title">Professional Experience</h2>
-    <div
-      v-for="(exp, idx) in experiences"
-      :key="exp.company + exp.period"
-      class="mb-4"
-    >
-      <div class="flex justify-between items-start mb-2">
-        <div>
-          <h3 class="text-lg font-bold text-gray-800">{{ exp.position }}</h3>
-          <div class="text-[var(--theme-color)] font-medium text-sm">
-            {{ exp.company }}
-          </div>
-        </div>
-        <div class="text-gray-600 text-right text-sm">
-          <div>{{ exp.location }}</div>
-          <div class="italic">{{ exp.period }}</div>
-        </div>
-      </div>
-      <ul class="list-disc list-inside text-gray-700 text-sm space-y-1">
-        <li v-for="(detail, i) in exp.details" :key="i">{{ detail }}</li>
-      </ul>
-    </div>
-  </section>
-</template>
