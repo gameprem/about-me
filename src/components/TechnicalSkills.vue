@@ -5,9 +5,9 @@
       <div
         v-for="category in skillCategories"
         :key="category.name"
-        class="bg-gray-50 p-2 rounded"
+        class="bg-gray-50 p-1 rounded"
       >
-        <h3 class="text-xs font-semibold text-gray-700 mb-1">
+        <h3 class="text-xs font-semibold text-gray-700 ">
           {{ category.name }}
         </h3>
         <div class="flex flex-wrap gap-0.5">

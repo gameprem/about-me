@@ -41,7 +41,7 @@
 
     <!-- Header -->
     <div
-      class="p-8 bg-gradient-to-r from-[var(--theme-color)] to-[var(--theme-color)] text-white flex items-center gap-8"
+      class="p-8 bg-gradient-to-r from-[var(--theme-color)] rounded-t-2xl to-[var(--theme-color)] text-white flex items-center gap-8"
     >
       <div v-if="imageData" class="flex-shrink-0">
         <img
