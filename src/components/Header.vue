@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="no-print fixed top-6 right-6 flex gap-2">
+    <div class="no-print fixed top-6 right-6 flex flex-col gap-2 items-end">
       <label class="bg-white px-4 py-3 rounded-xl shadow-lg flex items-center">
         <span class="mr-2 text-sm text-gray-700">Theme:</span>
         <input
@@ -47,7 +47,7 @@
         <img
           :src="imageData"
           alt="Profile"
-          class="w-28 h-28 object-cover rounded-full border-4 border-white shadow-lg"
+          class="w-28 h-28 object-cover rounded-xl border-4 border-white shadow-lg"
         />
       </div>
       <div>
