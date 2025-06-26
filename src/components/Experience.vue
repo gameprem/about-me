@@ -36,7 +36,7 @@ interface ExperienceItem {
 
 const experiences: ExperienceItem[] = [
   {
-    position: "Full-Stack Developer",
+    position: "Solution Architect / Full-Stack Developer",
     company: "Pobpa Co., Ltd.",
     location: "Bangkok",
     period: "January 2024 – Present",
