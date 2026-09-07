@@ -36,10 +36,20 @@ interface ExperienceItem {
 
 const experiences: ExperienceItem[] = [
   {
+    position: "Flutter Developer",
+    company: "Woxa Corporation Limited",
+    location: "Khonkaen",
+    period: "July 2025 – Present",
+    details: [
+      "Collaborated with UI/UX designers to deliver applications using Flutter",
+      "Mentored junior developers and conducted code reviews to ensure code quality and best practices",
+    ],
+  },
+  {
     position: "Solution Architect / Full-Stack Developer",
     company: "Pobpa Co., Ltd.",
     location: "Bangkok",
-    period: "January 2024 – Present",
+    period: "January 2024 – June 2025",
     details: [
       "Led the migration of legacy systems to a modern microservices architecture using NestJS and Docker",
       "Developed and maintained scalable RESTful APIs to support business growth and new product features",
